@@ -23,6 +23,7 @@ function errorLog (error) {
   // 打印到控制台
   if (process.env.NODE_ENV === 'development') {
     util.log.danger('>>>>>> Error >>>>>>')
+    // eslint-disable-next-line no-console
     console.log(error)
   }
   // 显示提示
@@ -50,6 +51,7 @@ service.interceptors.request.use(
   },
   error => {
     // 发送失败
+    // eslint-disable-next-line no-console
     console.log(error)
     Promise.reject(error)
   }
